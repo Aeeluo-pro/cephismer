@@ -8,7 +8,8 @@ const pool = mariadb.createPool({
     password: process.env.DB_PASSWORD || 'station',
     database: process.env.DB_NAME || 'station',
     connectionLimit: 20, // Increase as needed
-    connectTimeout: 20000 // Increase as needed
+    connectTimeout: 20000, // Increase as needed
+
 });
 
 pool.getConnection()

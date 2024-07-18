@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   web:
     build:
@@ -14,26 +14,19 @@ services:
     depends_on:
       - db
     restart: always
-    networks:
-      - station-network
   db:
     build:
       context: .
       dockerfile: Dockerfile.db
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: station
       MYSQL_DATABASE: station
       MYSQL_USER: station
-      MYSQL_PASSWORD: station
+      MYSQL_PASSWORD: localhost
     volumes:
       - db_data:/var/lib/mysql
     restart: always
     ports:
-      - "3307:3306"
-    networks:
-      - station-network
-
-networks:
-  station-network:
+      - "3306:3306"
 volumes:
   db_data:

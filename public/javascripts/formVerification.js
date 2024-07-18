@@ -10,8 +10,6 @@ flatpickr("#date_depot", {
     disable: suspension_dates
 });
 
-console.log(suspension_dates);
-
 const ERROR_CLASSES = {
     borderError: "border-error",
     errorContainer: "error-container",

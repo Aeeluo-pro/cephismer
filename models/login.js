@@ -10,6 +10,7 @@ function getHash(email) {
             return results[0];
         })
         .catch(err => {
-            throw err;
+            console.error(err);
+            return null;
         });
 }

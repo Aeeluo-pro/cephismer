@@ -6,22 +6,27 @@ const db = require('../models/default');
 const bcrypt = require('bcrypt');
 
 function login(req, res){
-    let email = req.body.email;
+    let id = req.body.username;
     let password = req.body.password;
 
-    db.login.getHash(email).then((hash) => {
+    db.login.getHash(id).then((hash) => {
         if(hash){
             bcrypt.compare(password, hash.password, (err, result) => {
-                if(err) console.log(err);
+                if(err) {
+                    console.error(err);
+                    return res.status(500).json({ error: 'An error occurred while comparing passwords' });
+                }
                 if(result){
                     req.session.isAdmin = true;
-                    res.status(200).redirect('/admin');
+
+                    return res.status(200).redirect('/admin');
                 }
-                else res.render('login', {isError: true})
+                else return res.render('login', {isError: true})
             });
         }
-        else res.render('login', {isError: true});
+        else return res.render('login', {isError: true});
     }).catch((err) => {
-        console.log("Error: 500 - Internal Server Error");
+        console.error(err);
+        return res.status(500).json({ error: 'An error occurred while retrieving the password hash' });
     });
 }

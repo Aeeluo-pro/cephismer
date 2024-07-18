@@ -129,16 +129,12 @@ function removeSuspend(req, res) {
             var month = String(currentDate.getMonth() + 1).padStart(2, '0');
             var year = currentDate.getFullYear();
             var date = `${year}-${month}-${day}`;
-            console.log("Current date : " + date);
-            console.log("Suspension dates: " + req.session.suspension_dates);
             var dates = req.session.suspension_dates;
             dates = dates.filter(d => d !== date);
 
-            console.log("Dates filtered : " + dates);
 
             var newDates = dates.join(';');
 
-            console.log("New Dates : " + newDates);
 
             db.admin.setSuspensionDates(newDates).then(() => {
                 res.status(200).redirect('/admin');
