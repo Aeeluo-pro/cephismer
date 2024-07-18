@@ -1,0 +1,458 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url("../font/Ubuntu-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu-medium;
+    src: url("../font/Ubuntu-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Ubuntu-bold;
+    src: url("../font/Ubuntu-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    font-family: Ubuntu, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #010101;
+    background-color: #f4f4f4;
+}
+
+
+/**
+    CARD
+ */
+
+.card{
+    margin-top: 5em;
+    border: 0;
+    background: #fff;
+    width: 100%;
+    min-width: 100%;
+
+    position: relative;
+
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.3125rem;
+}
+
+.card-header{
+    display: flex;
+
+}
+
+.card-title {
+    color: #343a40;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-family: "ubuntu-medium", sans-serif;
+    font-size: 1.725rem;
+    text-align: center;
+}
+
+.login-card {
+    width: 30%;
+    padding: 1em 2em 3em 2em;
+}
+
+/**
+    UTILITIES
+ */
+
+.w-30 {
+    width: 30%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.break-space{
+    white-space: break-spaces !important;
+}
+
+.w-100{
+    width: 100% !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.my-1 {
+    margin: 1.5em 0 !important;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+.pt-1{
+    padding: 1em 0 0 0 !important;
+}
+
+.no-transform{
+    text-transform: none !important;
+}
+
+/*.card {*/
+/*    margin-top: 3rem;*/
+/*    width: 90%;*/
+/*    max-width: 480px;*/
+/*    padding: 2rem;*/
+/*    border-radius: 20px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*    background-color: #fff;*/
+/*}*/
+
+.logo {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-left: 10px;
+}
+
+input,
+select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.text-small {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #666;
+}
+.text-medium{
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #666;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.div-error-message {
+    margin-top: 10px;
+}
+
+.error-message::before {
+    content: "";
+    display: inline-block;
+    width: 16px; /* Adjust based on your SVG's dimensions */
+    height: 16px; /* Adjust based on your SVG's dimensions */
+    margin-right: 8px; /* Space between the SVG and the text */
+    background-image: url('../images/alert-triangle-svgrepo-com.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.error-message {
+    color: #e01b24 !important;
+}
+
+.error-container-bottles, #free_bottles{
+    font-weight: bold;
+}
+
+.border-error {
+    border-color: #e01b24 !important;
+}
+
+.text-container {
+    margin-bottom: 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    font-family: "Ubuntu-bold", sans-serif;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    width: fit-content;
+    margin: 2rem 0;
+
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.875rem 2.5rem;
+    font-size: 0.875rem;
+    line-height: 1;
+    border-radius: 0.1875rem;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.primary-btn {
+    border: 0;
+    background: -webkit-gradient(linear, left top, right top, from(#90caf9), color-stop(99%, #047edf));
+    background: linear-gradient(to right, #90caf9, #047edf 99%)
+}
+
+.primary-btn:hover {
+    opacity: .8;
+}
+
+.primary-btn:active {
+    background: -webkit-gradient(linear, left top, right top, from(#90caf9), color-stop(99%, #047edf));
+    background: linear-gradient(to right, #90caf9, #047edf 99%)
+}
+
+.badge-success {
+    font-family: Ubuntu, sans-serif;
+    background-color: #1bcfb4;
+    color: #fff;
+    border: 1px solid #1bcfb4;
+    border-radius: .125rem;
+    font-size: 11px;
+    font-weight: initial;
+    line-height: 1;
+    padding: .375rem .5625rem;
+    cursor: pointer;
+}
+
+.badge-success:hover {
+    background-color: #15a58f;
+    border-color: #15a58f;
+}
+
+.badge-success:active {
+    background-color: #107e6d;
+    border-color: #107e6d;
+}
+
+.danger-btn{
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096));
+    background: linear-gradient(to right, #ffbf96, #fe7096);
+    border: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.danger-btn:hover{
+    opacity: .8;
+}
+
+.danger-btn:active{
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096));
+    background: linear-gradient(to right, #ffbf96, #fe7096);
+}
+
+.success-btn{
+    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae));
+    background: linear-gradient(to right, #84d9d2, #07cdae);
+    border: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.success-btn:hover{
+    opacity: .8;
+}
+
+.success-btn:active{
+    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae));
+    background: linear-gradient(to right, #84d9d2, #07cdae);
+}
+
+.secondary-btn{
+    background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
+    background: linear-gradient(to right, #da8cff, #9a55ff);
+    border: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.secondary-btn:active{
+    background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
+    background: linear-gradient(to right, #da8cff, #9a55ff);
+}
+
+.secondary-btn:hover{
+    opacity: .8;
+}
+
+
+.form-control, .form-control-lg {
+    display: block;
+    width: 100%;
+    height: 2.875rem;
+    padding: 0.94rem 1.375rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #495057;
+    background-clip: padding-box;
+    border-radius: 0;
+    -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+
+
+    border: 1px solid #ebedf2;
+    font-family: "ubuntu-regular", sans-serif;
+    background: transparent;
+    font-size: .9375rem;
+}
+
+select.form-control {
+    padding: .4375rem .75rem;
+}
+
+.form-control:focus, .form-control-lg:focus{
+    color: #000;
+    border-color: #80bdff;
+    outline: none;
+
+    box-shadow: none;
+}
+
+.form-control-lg {
+    height: 3.175rem;
+    padding: 0.94rem 1.94rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.form-group label {
+    color: #343A40;
+    font-size: 0.875rem;
+    line-height: 1;
+    vertical-align: top;
+    margin-bottom: .5rem;
+}
+
+.form-group{
+    margin-bottom: 1.5rem;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+}
+
+.title{
+    color: #343a40;
+    margin-bottom: 0.75rem;
+    text-transform: capitalize;
+    font-family: "Ubuntu-medium", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 100;
+}
+
+input{
+    overflow: visible;
+
+    outline: none;
+    outline-width: 0;
+    outline-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline-style: none;
+
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.small-card{
+    width: 30% !important;
+    padding: 1em 2em 3em 2em;
+}
+
+.xsmall-card{
+    width: 30% !important;
+    padding: 1em;
+}
+.navbar-top {
+    display: flex;
+    width: 100%;
+    height: 4em;
+    min-height: 4em;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    padding: 0 3em 0 5em;
+}
+
+.return-link{
+    text-decoration: none;
+}

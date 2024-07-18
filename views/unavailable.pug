@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    .card.small-card
+        h1.text-center Réservations interrompues
+        p.text-center.mt-3.text-medium Les réservations sont actuellement interrompues. Le site sera réouvert très prochainement.
+        if message
+            p.text-center.mt-3 #{message}

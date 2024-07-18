@@ -1,0 +1,37 @@
+extends adminLayout
+
+block content
+    .navbar-top
+        .admin-buttons-container
+            form(method='POST', action='/logout')
+                button.logout-button(type='submit')
+                    <svg xmlns="http://www.w3.org/2000/svg" class="logout-icon" viewBox="0 0 512 512"><path d="M304 336v40a40 40 0 01-40 40H104a40 40 0 01-40-40V136a40 40 0 0140-40h152c22.09 0 48 17.91 48 40v40M368 336l80-80-80-80M176 256h256" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+    .card.small-card
+        h1.title Éditer une réservation
+        form(action=`/update/${reservation.id}`, method='post')
+            .form-group
+                label(for='email') Email
+                input.form-control(type='email', id='email', name='email', value=reservation.email, required)
+            .form-group
+                label(for='unite') Unité
+                input.form-control(type='text', id='unite', name='unite', value=reservation.unite, required)
+            .form-group
+                label(for='operation') Opération
+                select.form-control(name='operation', id='operation')
+                    option(value='', style='display: none;') Choisir une opération
+                    option(value='Rinçage', selected=reservation.operation === 'Rinçage') Rinçage
+                    option(value='Gonflage', selected=reservation.operation === 'Gonflage') Gonflage
+                    option(value='Rinçage & Gonflage', selected=reservation.operation === 'Rinçage & Gonflage') Rinçage & Gonflage
+            .form-group
+                label(for='date_depot') Date de dépôt
+                input.form-control(type='date', id='date_depot', name='date_depot', value=reservation.date_depot, required)
+            .form-group
+                label(for='nombre_bouteilles') Nombre de bouteilles (Lyres et Blocs)
+                input.form-control(type='number', name='nombre_bouteilles', id='nombre_bouteilles', value=reservation.nombre_bouteilles, required)
+            .form-group
+                label(for='commentaires') Commentaires/Observations
+                input.form-control(type='text', id='commentaires', name='commentaires', value=reservation.commentaires)
+
+            button.btn.success-btn.my-1.w-100(type='submit') Modifier la réservation
+        form(action=`/delete/${reservation.id}`, method='post')
+            button.btn.danger-btn.m-0.w-100(type='submit') Supprimer la réservation

@@ -1,0 +1,30 @@
+{
+  "name": "cephismer",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "flatpickr": "^4.6.13",
+    "g": "^2.0.1",
+    "http-errors": "~1.6.3",
+    "json2csv": "^6.0.0-alpha.2",
+    "mariadb": "^3.3.1",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.5-lts.1",
+    "pug": "^3.0.2",
+    "sass": "^1.77.4",
+    "save-dev": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

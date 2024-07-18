@@ -1,0 +1,351 @@
+body {
+    background: #f2edf3;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/**
+    NAVBAR
+ **/
+
+
+.admin-button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: center;
+    user-select: none;
+    border-radius: 0.1875rem;
+
+    background-color: white;
+    border: 0;
+
+    cursor: pointer;
+
+    color: #fff;
+    fill: #fff;
+    line-height: 1;
+}
+
+.admin-button > svg {
+    width: 25px;
+    height: 25px;
+    transition: all 0.25s ease;
+}
+
+
+/**
+
+    CARD
+
+ **/
+
+/*.import-card, .suspend-card{*/
+/*    padding: 2em;*/
+/*}*/
+
+.dashboard-container{
+    margin: 0 8em;
+}
+
+.dashboard-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.dashboard-card > .card-body {
+    -webbkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.import-card{
+    padding: 2em;
+}
+
+/**
+    BUTTON CSS
+ **/
+
+.btn-rounded {
+    border-radius: 50px;
+}
+
+.search-button-container {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+}
+
+.search-btn {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.navbar-top .admin-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.admin-buttons-container{
+    display: flex;
+    gap: 1.5em;
+}
+
+.navbar-top .admin-button:hover {
+    opacity: .8;
+}
+
+/**
+
+    TABLE CSS
+
+ **/
+
+
+.table-item:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+.table {
+    margin-bottom: 0;
+    width: 100%;
+    border: 1px solid #ebedf2;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    /*font-weight: initial;*/
+    font-weight: bold;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ebedf2;
+}
+
+.table th, .table td {
+    text-align: center;
+    padding: 0.9375rem;
+    vertical-align: top;
+    border-top: 1px solid #ebedf2;
+}
+
+.table th, .table td {
+
+    vertical-align: middle;
+    font-size: 0.875rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
+
+.result-table {
+    margin-top: 2em;
+}
+
+.result-table tbody tr:hover {
+    color: #212529;
+    background-color: #f2edf3;
+}
+
+
+.mail {
+    color: #0d6efd;
+}
+
+.mail:hover {
+    color: #094eb3;
+}
+
+/**
+    FILE INPUT
+ */
+.file-container {
+    display: flex;
+    justify-content: center;
+}
+
+#file-upload-label, #file-input {
+    margin-right: 2rem;
+}
+
+input[type=file] {
+    color: #222245;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #222245;
+}
+
+input[type=file]:focus {
+    outline: 2px dashed #222245;
+    outline-offset: 2px;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 8px;
+    border: none;
+    border-radius: 0.175rem;
+    background: #0d6efd;
+    padding: 8px 12px;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type=file]::file-selector-button:hover {
+    background: #0b5ed7;
+}
+
+input[type=file]:focus {
+    outline: 2px dashed #7c7cc0;
+    outline-offset: 2px;
+}
+
+input[type=file]::file-selector-button {
+    background: #0d6efd;
+    color: #fff;
+}
+
+.export-container {
+    display: flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/**
+    SUSPEND POPUPS
+ */
+
+.menubar{
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
+}
+
+.popup-title{
+    text-align: center;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.close-button{
+    border-top-right-radius: 0.3125rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+    width: 30px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.close-button:hover{
+    background: #e32336;
+    cursor: pointer;
+}
+
+.close-button:hover .navbar-icon-wrapper svg{
+    fill: white;
+    color: white;
+}
+
+/**
+    SUSPEND
+ */
+
+.suspend-form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 2em;
+    gap: 1.5em;
+}
+
+.suspend-card{
+    padding: 1.8em;
+}
+
+body.popup-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+}
+
+.popup-suspend-card {
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    bottom:50%;
+    transform: translate(-50%, 50%);
+    z-index: 10000; /* Ensure the popup is above the overlay */
+}
+
+.suspend-buttons-container{
+    display: flex;
+    gap:1.5em;
+}
+
+.export-container{
+    border: 1px solid #EBEDF2;
+    margin: 3em 0;
+}
+
+.export-container form{
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-card{
+    width: 25%;
+    padding: 1.8em;
+}
+.edit-btn{
+    margin: 0;
+}
+
+.m-0{
+    margin: 0 !important;
+}

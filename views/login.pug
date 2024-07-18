@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .card.small-card
+        h1.title Login
+        form(action="/login", method="POST")
+            .input-group
+                label(for="email") Email
+                input.form-control(type="email", id="email", name="email", required)
+            .input-group
+                label(for="password") Mot de passe
+                input.form-control(type="password", id="password", name="password", required)
+            .button-container.text-center
+                button.btn.secondary-btn(type="submit") Se connecter
+    if isError
+        .card.xsmall-card.mt-3
+            .error-container-nb
+                p.error-message.text-center L'identifiant ou le mot de passe est incorrect.

@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= "Réservations CEPHISMER"
+    link(rel='stylesheet', href='/stylesheets/styles.css')
+    if isAdmin
+      link(rel='stylesheet', href='/stylesheets/admin.css')
+    link(rel='stylesheet', href='/static/flatpickr/dist/flatpickr.css')
+    link(rel='stylesheet', href='/static/flatpickr/dist/themes/airbnb.css')
+    script(src='/static/flatpickr/dist/flatpickr.js')
+  body
+    block content

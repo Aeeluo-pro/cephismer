@@ -1,0 +1,113 @@
+/* ----------------
+    FLEXBOX
+    ---------------
+ */
+.flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexbox-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flexbox-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================
+    NAVBAR ITEMS
+   ================
+ */
+
+#navbar {
+    height: 100vh;
+    width: 5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: hsl(256, 12%, 12%);
+    padding-top: 3em;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width .35s cubic-bezier(.175, .685, .32, 1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#navbar:hover {
+    width: 20em;
+}
+
+#navbar:hover .text-item{
+    opacity: 1;
+    width: calc(100% - calc(5rem - 8px));
+}
+
+.text-item{
+    opacity: 0;
+    width: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all .35s cubic-bezier(.175, .685, .32, 1);
+}
+
+.navbar-items {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.navbar-item{
+    padding: 0 .5em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.navbar-link {
+    padding: 1em 0;
+    width: 100%;
+    position: relative;
+    text-decoration: none;
+    color: hsl(0, 0%, 50%);
+    border-radius: .25em;
+    transition: all .2s cubic-bezier(.175, .685, .32, 1);
+}
+
+.navbar-link:hover{
+    color: white;
+    fill: white;
+    background: hsl(257, 11%, 16%);
+    box-shadow: 0 17px 30px -10px hsla(0, 0%, 0%, .25);
+}
+
+.navbar-link:hover > .navbar-icon-wrapper > svg{
+    color: white;
+    fill: white;
+}
+
+.navbar-icon-wrapper {
+    width: calc(5rem - 1em - 8px);
+    position: relative;
+}
+
+.navbar-icon-wrapper svg{
+    position: absolute;
+    font-size: calc(2.4rem - 1rem);
+}
+
+.navbar-inner-icon {
+    width: 30px;
+    height: 30px;
+    color: hsl(0, 0%, 50%);
+    fill: hsl(0, 0%, 50%);
+    transition: all .35s cubic-bezier(.175, .685, .32, 1);
+}
+

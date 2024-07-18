@@ -1,0 +1,64 @@
+extends layout
+
+block content
+    if isAdmin
+        .navbar-top
+            .admin-buttons-container
+                form(method='GET', action='/admin')
+                    button.admin-button.primary-btn(type='submit')
+                        <svg xmlns="http://www.w3.org/2000/svg" class="admin-icon" viewBox="0 0 512 512"><path d="M326.1 231.9l-47.5 75.5a31 31 0 01-7 7 30.11 30.11 0 01-35-49l75.5-47.5a10.23 10.23 0 0111.7 0 10.06 10.06 0 012.3 14z"/><path d="M256 64C132.3 64 32 164.2 32 287.9a223.18 223.18 0 0056.3 148.5c1.1 1.2 2.1 2.4 3.2 3.5a25.19 25.19 0 0037.1-.1 173.13 173.13 0 01254.8 0 25.19 25.19 0 0037.1.1l3.2-3.5A223.18 223.18 0 00480 287.9C480 164.2 379.7 64 256 64z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M256 128v32M416 288h-32M128 288H96M165.49 197.49l-22.63-22.63M346.51 197.49l22.63-22.63"/></svg>
+                form(method='POST', action='/logout')
+                    button.admin-button.primary-btn(type='submit')
+                        <svg xmlns="http://www.w3.org/2000/svg" class="logout-button" viewBox="0 0 512 512"><path d="M378 108a191.41 191.41 0 0170 148c0 106-86 192-192 192S64 362 64 256a192 192 0 0169-148M256 64v192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+    div.card.small-card
+        img(src='/images/logo_cephismer.png', alt='CEPHISMER').logo
+        h1.title.text-center Dépôt de bouteilles
+        p.text-center.text-small Horaire d'ouverture : 8h00 - 11h00 <br> du lundi au vendredi.
+        form#book_form(action='/booking', method='POST')
+            .input-group#div_email
+                .label-container
+                    label.red *
+                    label(for='email') Email
+                input.form-control#email(type='email', name='email', value=reservation.email placeholder="exemple@intradef.gouv.fr" required)
+            .input-group#div_unite
+                .label-container
+                    label.red *
+                    label(for='unite') Unité
+                input.form-control#unite(type='text', name='unite', value=reservation.unite placeholder="Unité" required)
+            .input-group#div_operation
+                .label-container
+                    label.red *
+                    label(for='operation') Opération
+                select.form-control#operation(name='operation' required)
+                    option(value='', style='display: none;') Choisir une opération
+                    option(value='Rinçage' selected=reservation.operation === 'Rinçage') Rinçage
+                    option(value='Gonflage' selected=reservation.operation === 'Gonflage') Gonflage
+                    option(value='Rinçage & Gonflage' selected=reservation.operation === 'Rinçage & Gonflage') Rinçage & Gonflage
+            .input-group#div_date_depot
+                .label-container
+                    label.red *
+                    label(for='date_depot') Date de dépôt
+                //input.form-control#date_depot(type='date', name='date_depot', value=reservation.date_depot, required)
+                input.form-control#date_depot(type='text', name='date_depot')
+            .input-group#div_nombre_bouteilles
+                .label-container
+                    label.red *
+                    label(for='nombre_bouteilles') Nombre de bouteilles
+                input.form-control#nombre_bouteilles(type='number', name='nombre_bouteilles', value=reservation.nombre_bouteilles, disabled=true, placeholder="0", min="1" required)
+            .div-commentaires
+                .input-group
+                    label(for='commentaires') Commentaires/Observations
+                    input.form-control#commentaires(type='text', name='commentaires', placeholder="Commentaires L12345" value=reservation.commentaires )
+            button#book_button.btn.primary-btn.w-100(type='submit') Réserver
+            .text-center.text-small Station de gonflage : 04.22.42.35.49
+            .text-center.text-small Officier de permanence : 06.87.72.59.25
+    .file-button-container
+        if fileExists
+            form.text-center(action='/download/analysis', method='POST')
+                button.btn.success-btn(type='submit') Télécharger les analyses du LASEM
+        else
+            p.text-center.text-small Aucun fichier d'analyse disponible
+
+    script.
+        window.suspensionDates = !{JSON.stringify(suspensionDates)}
+    script(src='/javascripts/formVerification.js' type='module')
